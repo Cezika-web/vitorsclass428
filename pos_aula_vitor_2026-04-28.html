@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resumo Pós-Aula — Vitor — CZK English</title>
+
+  <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=h_4X4_vfCZLpnkWIx9fnmp-7FYm-mhAT5GEiTPLMcJ7BVS6FRbhtJRBnDD6TiAuqqG2HivshwFXylM0KlpGTqVXjFNp-Uj9jvYWtZhbDDi3e9Wrl32NQXIVrTcidenUpIPBBdIRFDp8hbQE_vh__ADO5EWZNlhNQK2V-pyMiNX-jdpf_RVm37HsJFoOdekjgNyQPYNLXbzZu7xmpW-CH2WSjeWSrse7Vb7U3-PjMq5jGVDDylxsyngfhnYa-AIyp2KKfxaXbCh45jfWtTnR89g" charset="UTF-8"></script><style>
+    :root{
+      --page-bg: #f4f7fa;
+      --card-bg: #fff;
+      --accent: #2f86e6;
+      --accent-dark: #1f6fd1;
+      --green: #36b37e;
+      --muted: #6b7280;
+      --border: #e6eef8;
+      --box-radius: 12px;
+      --card-width: 720px;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      padding:0;
+      background:var(--page-bg);
+      font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:48px 20px;
+    }
+
+    .card{
+      width:100%;
+      max-width:var(--card-width);
+      background:var(--card-bg);
+      border-radius:18px;
+      padding:28px;
+      box-shadow:0 6px 22px rgba(33,47,60,0.06);
+      border:1px solid rgba(15,33,64,0.03);
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:8px;
+    }
+
+    .badge{
+      background:linear-gradient(180deg,#fff,#f2fbff);
+      border:1px solid var(--border);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--accent);
+      font-weight:700;
+      font-size:0.85rem;
+    }
+
+    h1{
+      margin:0;
+      font-size:1.3rem;
+      color:#0f1724;
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:0.92rem;
+      margin-top:6px;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:10px;
+      border:none;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      cursor:pointer;
+      box-shadow:0 6px 14px rgba(47,134,230,0.12);
+    }
+
+    .btn.secondary{
+      background:#fff;
+      color:var(--accent);
+      border:1px solid var(--border);
+      box-shadow:none;
+    }
+
+    main{margin-top:18px;}
+    section{margin-top:18px;}
+
+    .panel{
+      background:#fbfdff;
+      border-radius:12px;
+      padding:16px;
+      border:1px solid var(--border);
+    }
+
+    .outline-card{
+      border-radius:10px;
+      border:1px solid var(--border);
+      padding:16px;
+      background:#fff;
+    }
+
+    /* Vocabulary boxes */
+    .vocab-grid{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .vocab{
+      flex:1;
+      min-width:220px;
+      border-radius:10px;
+      padding:14px;
+      border:2px solid #dfeefe;
+      background:#fff;
+    }
+
+    .vocab.green{
+      border-color:#c9f3dc;
+      background:#f5fff6;
+    }
+
+    .vocab h3{
+      margin:0;
+      font-size:1rem;
+      color:#154360;
+    }
+
+    .vocab p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    /* Transcrição / gravação buttons */
+    .media-row{
+      display:flex;
+      gap:14px;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+
+    .media-btn{
+      background:#fff;
+      border:1px solid var(--border);
+      padding:12px 16px;
+      border-radius:10px;
+      font-weight:700;
+      color:var(--accent);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      min-width:200px;
+      justify-content:center;
+    }
+
+    /* Homework box */
+    .homework{
+      background:#f3fff6;
+      border:1px solid #d7f5df;
+      border-radius:10px;
+      padding:14px;
+      margin-top:10px;
+    }
+
+    /* ===== TALK TIME – TABELA RETANGULAR ===== */
+    .speaking{
+      margin-top:18px;
+      padding:16px;
+      border-radius:12px;
+      background:linear-gradient(180deg,#ffffff,#fbfdff);
+      border:1px solid var(--border);
+      max-width:640px;
+    }
+
+    .speaking h2{
+      margin:0 0 10px 0;
+      font-size:1.05rem;
+      color:#0f1724;
+    }
+
+    .talk-table{
+      width:100%;
+      border-collapse:collapse;
+      border-radius:10px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid #e1e9f5;
+      font-size:0.9rem;
+    }
+
+    .talk-table th,
+    .talk-table td{
+      padding:8px 10px;
+      text-align:left;
+    }
+
+    .talk-table th{
+      background:#eef4ff;
+      color:#1b3556;
+      font-weight:700;
+      border-bottom:1px solid #dde6fa;
+    }
+
+    .row-teacher{
+      background:#e7f2ff; /* azul clarinho */
+    }
+
+    .row-student{
+      background:#e8f7ef; /* verde clarinho */
+    }
+
+    .talk-label{
+      font-weight:700;
+    }
+
+    .talk-percent{
+      font-weight:700;
+      color:#0f1724;
+    }
+
+    .talk-time{
+      color:var(--muted);
+    }
+
+    footer{
+      margin-top:20px;
+      color:var(--muted);
+      font-size:0.9rem;
+      text-align:center;
+    }
+
+    /* responsive */
+    @media (max-width:720px){
+      .card{padding:18px;border-radius:14px;}
+      .vocab-grid{flex-direction:column;}
+      .media-row{flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <article class="card" role="main">
+      <header>
+        <div>
+          <div style="display:flex;gap:10px;align-items:center;">
+            <span class="badge">PÓS-AULA</span>
+            <h1>Presente, passado, futuro e vocabulário de dinheiro</h1>
+          </div>
+          <div class="meta" style="margin-top:8px;">
+            <strong>Professor:</strong> César &nbsp;•&nbsp;
+            <strong>Aluno:</strong> Vitor &nbsp;•&nbsp;
+            <strong>Data:</strong> 28/04/2026
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="#" onclick="window.print();return false;">Imprimir / Salvar PDF</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="panel">
+          <p style="margin:0;font-weight:600;color:#08325a;">
+            📘 Aula presencial sobre rotina, academia, revisão de presente/passado/futuro, vocabulário de dinheiro e introdução ao <em>be going to</em>.
+          </p>
+        </section>
+
+        <section>
+          <h2 style="margin-bottom:8px;">Resumo da Aula</h2>
+          <div class="outline-card">
+            <p style="margin:0 0 8px 0;">
+              A aula começou com uma conversa sobre rotina, academia e natação. Revisamos como falar sobre atividades físicas, especialmente <strong>weightlifting</strong> para levantamento de peso, além de frases simples sobre hábitos e esportes.
+            </p>
+            <p style="margin:0 0 8px 0;">
+              Depois, corrigimos atividades da Área do Aluno com foco em <strong>presente, passado e futuro</strong>. A revisão trabalhou bastante o uso de <strong>do / does / did</strong>, principalmente a ideia de que, quando usamos <strong>did / didn’t</strong> no passado, o verbo principal volta para a forma base: <em>She spent money</em> → <em>She didn’t spend money</em>.
+            </p>
+            <p style="margin:0 0 8px 0;">
+              Também reforçamos a <strong>terceira pessoa do singular</strong> no presente: <em>he / she / it</em> normalmente recebem <strong>-s</strong>, mas alguns verbos precisam de <strong>-es</strong>, como <em>watches, fixes, goes, does</em>. Esse ponto é importante porque aparece em frases afirmativas no presente, mas desaparece quando usamos <strong>doesn’t</strong>: <em>He doesn’t watch TV</em>, e não <em>He doesn’t watches TV</em>.
+            </p>
+            <p style="margin:0 0 8px 0;">
+              Em seguida, voltamos ao livro e estudamos vocabulário de dinheiro, como <strong>save, spend, waste, borrow, lend, pay back, sell</strong> e <strong>shop online</strong>. Um ponto importante foi a diferença entre <strong>spend</strong> e <strong>waste</strong>: os dois podem aparecer como “gastar” em português, mas <strong>waste</strong> carrega a ideia de desperdiçar ou jogar dinheiro fora.
+            </p>
+            <p style="margin:0;">
+              No final da aula, começamos o futuro com <strong>be going to</strong>, usado para planos e intenções. A estrutura principal foi: <span style="font-family:monospace;">subject + be + going to + verb</span>. Também vimos que, depois de <strong>going to</strong>, precisa vir um verbo, mesmo quando esse verbo é <strong>go</strong>: <em>I’m going to go shopping</em>.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 style="margin-bottom:8px;">Key Vocabulary</h2>
+          <div class="vocab-grid">
+            <div class="vocab">
+              <h3>Waste</h3>
+              <p style="margin-top:8px;font-size:0.92rem;color:var(--muted);">
+                <em>(pt) desperdiçar / gastar de forma ruim</em><br>
+                <small>Don’t waste money on silly things.</small>
+              </p>
+            </div>
+            <div class="vocab green">
+              <h3>Be going to</h3>
+              <p style="margin-top:8px;font-size:0.92rem;color:var(--muted);">
+                <em>(pt) estrutura para planos futuros</em><br>
+                <small>I’m going to buy a TV.</small>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- NOVOS TÓPICOS: VOCABULÁRIO DA AULA, FRASES MODELO, CORREÇÕES -->
+        <section>
+          <h2 style="margin-bottom:8px;">Vocabulário da aula</h2>
+          <div class="outline-card">
+            <h3 style="margin-top:0;">💬 Frases usadas em aula</h3>
+            <ul>
+              <li>I make good decisions.</li>
+              <li>I don’t make good decisions.</li>
+              <li>He swims every week.</li>
+              <li>He doesn’t swim every week.</li>
+              <li>They went to the mall.</li>
+              <li>They didn’t go to the mall.</li>
+              <li>She spent money on shoes.</li>
+              <li>She didn’t spend money on shoes.</li>
+              <li>David wants to buy a car, so he saves a lot of his money.</li>
+              <li>She never wastes money on silly things.</li>
+              <li>I’m going to buy a TV.</li>
+              <li>We’re going to shop online in the future.</li>
+              <li>I’m going to start my new job on Monday.</li>
+            </ul>
+
+            <h3>Vocabulário de dinheiro</h3>
+            <ul>
+              <li><strong>save money</strong> – economizar / guardar dinheiro</li>
+              <li><strong>spend money</strong> – gastar dinheiro</li>
+              <li><strong>waste money</strong> – desperdiçar dinheiro / gastar mal</li>
+              <li><strong>borrow money</strong> – pegar dinheiro emprestado</li>
+              <li><strong>lend money</strong> – emprestar dinheiro para alguém</li>
+              <li><strong>pay back</strong> – devolver / pagar de volta</li>
+              <li><strong>sell</strong> – vender</li>
+              <li><strong>shop online</strong> – comprar online</li>
+              <li><strong>receipt</strong> – recibo / comprovante</li>
+              <li><strong>ticket</strong> – ingresso / passagem</li>
+            </ul>
+
+            <h3>Rotina, esportes e atividades</h3>
+            <ul>
+              <li><strong>gym</strong> – academia</li>
+              <li><strong>swimming</strong> – natação</li>
+              <li><strong>weightlifting</strong> – levantamento de peso / musculação</li>
+              <li><strong>routine</strong> – rotina</li>
+              <li><strong>free time</strong> – tempo livre</li>
+              <li><strong>work</strong> – trabalho / trabalhar</li>
+              <li><strong>study</strong> – estudar</li>
+              <li><strong>friends and family</strong> – amigos e família</li>
+              <li><strong>home</strong> – casa</li>
+            </ul>
+
+            <h3>Estruturas gramaticais revisadas</h3>
+            <ul>
+              <li><strong>do / don’t</strong> – auxiliar do presente para <em>I, you, we, they</em></li>
+              <li><strong>does / doesn’t</strong> – auxiliar do presente para <em>he, she, it</em></li>
+              <li><strong>did / didn’t</strong> – auxiliar do passado</li>
+              <li><strong>be going to + verb</strong> – estrutura para planos futuros</li>
+              <li><strong>on Monday / on Friday</strong> – usado com dias específicos</li>
+              <li><strong>in the future</strong> – no futuro</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 style="margin-bottom:8px;">Frases modelo da aula</h2>
+          <div class="outline-card">
+            <ul>
+              <li>I don’t make good decisions.</li>
+              <li>He doesn’t swim every week.</li>
+              <li>They didn’t go to the mall.</li>
+              <li>She didn’t spend money on shoes.</li>
+              <li>We don’t buy clothes online.</li>
+              <li>He didn’t return the shirt.</li>
+              <li>She doesn’t save money every month.</li>
+              <li>Can I borrow $2.00?</li>
+              <li>Can you lend me $20?</li>
+              <li>I’m going to shop online in the future.</li>
+              <li>We’re not going to come back next year.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ✅ NOVA SEÇÃO FIXA: CORREÇÕES IMPORTANTES -->
+        <section>
+          <h2 style="margin-bottom:8px;">Correções importantes</h2>
+          <div class="outline-card">
+            <h3 style="margin-top:0;">🚨 1. Passado com <em>didn’t</em>: o verbo volta para a forma base</h3>
+            <ul>
+              <li>❌ <em>They didn’t went to the mall.</em><br>✅ <em>They didn’t go to the mall.</em></li>
+              <li>❌ <em>She didn’t spent money on shoes.</em><br>✅ <em>She didn’t spend money on shoes.</em></li>
+              <li>❌ <em>We didn’t swam yesterday.</em><br>✅ <em>We didn’t swim yesterday.</em></li>
+            </ul>
+            <p style="margin:0 0 10px 0;color:var(--muted);font-size:0.94rem;">
+              Quando o <strong>did / didn’t</strong> aparece, ele já mostra que a frase está no passado. Por isso, o verbo principal não fica no passado.
+            </p>
+
+            <h3>🚨 2. Presente com <em>he / she / it</em>: cuidado com <em>doesn’t</em></h3>
+            <ul>
+              <li>✅ <em>He swims every week.</em></li>
+              <li>✅ <em>He doesn’t swim every week.</em></li>
+              <li>❌ <em>He doesn’t swims every week.</em></li>
+              <li>✅ <em>She saves money every month.</em></li>
+              <li>✅ <em>She doesn’t save money every month.</em></li>
+            </ul>
+            <p style="margin:0 0 10px 0;color:var(--muted);font-size:0.94rem;">
+              Na frase afirmativa, o verbo muda com <strong>he / she / it</strong>. Na negativa com <strong>doesn’t</strong>, o verbo volta para a forma normal.
+            </p>
+
+            <h3>🚨 3. Como conjugar verbos no presente com <em>he / she / it</em></h3>
+            <ul>
+              <li>Regra geral: adicionar <strong>-s</strong><br>✅ <em>work → works</em> / <em>swim → swims</em> / <em>save → saves</em></li>
+              <li>Verbos terminados em <strong>ch, sh, x, s, ss, o</strong>: adicionar <strong>-es</strong><br>✅ <em>watch → watches</em> / <em>wash → washes</em> / <em>fix → fixes</em> / <em>go → goes</em> / <em>do → does</em></li>
+              <li>Verbos terminados em consoante + <strong>y</strong>: trocar <strong>y</strong> por <strong>ies</strong><br>✅ <em>study → studies</em></li>
+              <li>Verbos terminados em vogal + <strong>y</strong>: apenas adicionar <strong>-s</strong><br>✅ <em>play → plays</em></li>
+            </ul>
+
+            <h3>🚨 4. <em>Spend</em> x <em>waste</em></h3>
+            <ul>
+              <li><strong>spend</strong> = gastar dinheiro de forma neutra<br>✅ <em>She spent money on shoes.</em></li>
+              <li><strong>waste</strong> = desperdiçar / gastar mal<br>✅ <em>She never wastes money on silly things.</em></li>
+            </ul>
+            <p style="margin:0 0 10px 0;color:var(--muted);font-size:0.94rem;">
+              Em português, podemos dizer “gastar dinheiro” nos dois casos. Em inglês, <strong>waste</strong> tem uma carga negativa, como perder dinheiro à toa.
+            </p>
+
+            <h3>🚨 5. Depois de <em>be going to</em>, precisa vir um verbo</h3>
+            <ul>
+              <li>✅ <em>I’m going to buy a TV.</em></li>
+              <li>✅ <em>We’re going to shop online.</em></li>
+              <li>✅ <em>I’m going to go shopping.</em></li>
+              <li>❌ <em>I’m going to shopping.</em></li>
+            </ul>
+            <p style="margin:0;color:var(--muted);font-size:0.94rem;">
+              O <strong>going to</strong> sozinho não fecha a ideia. Ele precisa de outro verbo depois. Quando a ideia é “ir a algum lugar”, o verbo pode ser <strong>go</strong>: <em>I’m going to go to the mall</em>. Em conversas naturais, às vezes usamos o presente contínuo para planos com deslocamento: <em>I’m going to the mall tomorrow</em>. Nesse caso, <strong>going</strong> já é o verbo principal, não a estrutura de futuro <strong>be going to + verb</strong>.
+            </p>
+          </div>
+        </section>
+        <!-- ✅ FIM DA NOVA SEÇÃO -->
+
+        <section>
+          <h2 style="margin-bottom:8px;">Transcrição &amp; Gravação</h2>
+          <div class="media-row">
+            <!-- Transcrição sem link (apenas botão) -->
+            <a class="media-btn" href="#" role="button">📄 Aula presencial sem transcrição</a>
+
+            <!-- Vídeo da aula com o link que você mandou -->
+            <a
+              class="media-btn"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="button"
+              style="background:linear-gradient(180deg,#1f6fd1,#2f86e6);color:#fff;border:none;min-width:260px;"
+            >
+              🎥 Aula presencial, sem vídeo
+            </a>
+          </div>
+        </section>
+
+        <!-- ===== TABELA DE DISTRIBUIÇÃO DE FALA ===== -->
+        <section class="speaking" aria-label="Distribuição de fala">
+          <h2>Tempo de Fala (Talk Time)</h2>
+          <table class="talk-table">
+            <thead>
+              <tr>
+                <th>Quem falou</th>
+                <th>Porcentagem</th>
+                <th>Duração aproximada</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-teacher">
+                <td><span class="talk-label">César (Professor)</span></td>
+                <td><span class="talk-percent">55%</span></td>
+                <td class="talk-time">~33 minutos</td>
+              </tr>
+              <tr class="row-student">
+                <td><span class="talk-label">Vitor</span></td>
+                <td><span class="talk-percent">45%</span></td>
+                <td class="talk-time">~27 minutos</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <!-- ===== FIM TABELA ===== -->
+
+        <section>
+          <h2 style="margin-bottom:8px;">Homework</h2>
+          <div class="homework">
+            <p style="margin:0 0 8px 0;">
+              📌 <strong>Lição de casa:</strong>
+            </p>
+            <ul style="margin:0 0 6px 18px;padding:0;font-size:0.94rem;color:var(--muted);">
+              <li>Ler este pós-aula de <strong>2 a 3 vezes na semana</strong>.</li>
+            </ul>
+            <p style="margin:6px 0 0 0;">
+              <!-- Botão de tarefa de casa com link do Babadum -->
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn secondary"
+                style="padding:8px 12px;border-radius:8px;font-weight:700;"
+              >
+                📝 Revisar pós-aula
+              </a>
+            </p>
+          </div>
+
+          <div style="margin-top:14px;">
+            <a class="btn" href="https://wa.me" style="background:#25D366;border-radius:10px;box-shadow:none;">
+              💬 Falar comigo no WhatsApp
+            </a>
+          </div>
+        </section>
+
+      </main>
+
+      <footer>
+        <p style="margin:18px 0 0 0;color:var(--muted);font-size:0.9rem;">
+          © 2025 CZK English • Este conteúdo é exclusivo para fins educacionais. • Suporte: czkenglish@gmail.com
+        </p>
+      </footer>
+    </article>
+  </div>
+</body>
+</html>
